@@ -5,7 +5,10 @@ import VueRouter from "vue-router";
 import router from "./routes/router";
 import App from "./components/App";
 import ElementUI from 'element-ui';
-import locale from 'element-ui/lib/locale/lang/ru-RU'
+import locale from 'element-ui/lib/locale/lang/ru-RU';
+import Error from "./components/path/valid_errors";
+
+Vue.component('valid_errors', Error);
 
 Vue.use(ElementUI, { locale, size: 'small' });
 

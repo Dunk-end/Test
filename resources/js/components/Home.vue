@@ -3,7 +3,7 @@
         <header style="background: linear-gradient(180deg, rgba(25, 25, 25, .6),rgba(25, 25, 25, .4)), url('public/storage/images/header_bg.jpg');">
             <div class="header">
                 <div class="container">
-                    <nav>
+                    <nav style="margin-left: -30px">
                         <router-link class="logo nav__link" to="/"><big><b>Laravel_blog</b></big></router-link>
                         <ul>
                             <li>

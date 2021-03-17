@@ -1,6 +1,6 @@
 <template>
     <section>
-        <header style="background: linear-gradient(180deg, rgba(25, 25, 25, .6),rgba(25, 25, 25, .4)), url('public/storage/images/header_bg.jpg');">
+        <header style="background: linear-gradient(180deg, rgba(25, 25, 25, .6),rgba(25, 25, 25, .4)), url('../../../../public/storage/images/header_bg.jpg');">
             <div class="header">
                 <div class="container">
                     <nav>

@@ -2,7 +2,7 @@
     <section>
         <div class="header" style="position: sticky">
             <div class="container">
-                <nav>
+                <nav style="margin-left: -30px">
                     <router-link class="logo nav__link" to="/"><big><b>Laravel_blog</b></big></router-link>
                     <ul>
                         <li>
@@ -18,6 +18,7 @@
         <div class="container">
             <el-form style="margin-top: 150px; background: #fff; padding: 24px; border-radius: 4px; box-shadow: 0 10px 10px 1px #22222255;">
                 <h3 style="margin-bottom: 12px;">Регистрация</h3>
+                <valid_errors v-if="valid_errors" :errors="valid_errors"></valid_errors>
                 <el-form-item>
                     <el-input type="text" v-model="form_data.name" name="name" class="form-control" placeholder="Ваше имя, например: Иван" />
                 </el-form-item>
@@ -40,6 +41,7 @@
     export default {
         data() {
             return {
+                valid_errors: '',
                 form_data: {
                     name: '',
                     login: '',
@@ -49,8 +51,21 @@
             }
         },
         methods: {
-            send () {
-                axios.post('/register', this.form_data)
+            send() {
+                axios
+                    .post('/register', this.form_data)
+                    .then(response => {
+                        if (response.data.status === 200) {
+                            // this.valid_success = response.data
+                            console.log(response.data.status)
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error.response.data.errors)
+                        if (error.response.status === 422) {
+                            this.valid_errors = error.response.data.errors;
+                        }
+                    });
             }
         }
     }
