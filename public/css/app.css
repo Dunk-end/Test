@@ -43,11 +43,12 @@ nav .nav__link:hover {
   color: #f8f8f8;
 }
 
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
+.sign {
+  text-decoration: none;
+  color: #5bb2e3;
+  transition: color 0.4s;
 }
 
-.bg-purple-dark {
-  background: #99a9bf;
+.sign:hover {
+  color: #2b698c;
 }

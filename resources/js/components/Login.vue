@@ -17,22 +17,16 @@
         </div>
         <div class="container">
             <el-form style="margin-top: 150px; background: #fff; padding: 24px; border-radius: 4px; box-shadow: 0 3px 10px 0 #22222255;">
-                <h3 style="margin-bottom: 12px;">Регистрация</h3>
+                <h3 style="margin-bottom: 12px;">Вход</h3>
                 <valid_errors v-if="valid_errors" :errors="valid_errors"></valid_errors>
-                <el-form-item>
-                    <el-input type="text" v-model="form_data.name" name="name" class="form-control" placeholder="Ваше имя, например: Иван" />
-                </el-form-item>
                 <el-form-item>
                     <el-input type="text" v-model="form_data.login" name="login" class="form-control" placeholder="Ваш логин, например: user" />
                 </el-form-item>
                 <el-form-item>
                     <el-input type="password" v-model="form_data.password" name="password" class="form-control" placeholder="Введите пароль" />
                 </el-form-item>
-                <el-form-item>
-                    <el-input type="password" v-model="form_data.password_confirm" name="password_confirm" class="form-control" placeholder="Повторите пароль" />
-                </el-form-item>
-                <el-button @click.prevent='send' style="outline: none">Зарегистрироваться</el-button>
-                <router-link class="sign" to="/login">Есть аккаунта? - Авторизируйтесь!</router-link>
+                <el-button @click.prevent='send' style="outline: none">Войти</el-button>
+                <router-link class="sign" to="/register">Нет аккаунта? - Зарегистрируйтесь!</router-link>
             </el-form>
         </div>
     </section>
@@ -45,10 +39,8 @@
             return {
                 valid_errors: '',
                 form_data: {
-                    name: '',
                     login: '',
                     password: '',
-                    password_confirm: ''
                 }
             }
         },
@@ -57,7 +49,7 @@
                 send()
                 {
                     axios
-                        .post('/register', this.form_data)
+                        .post('/login', this.form_data)
                         .then(response => {
                             this.$notify({
                                 title: 'Успех!',
@@ -80,7 +72,7 @@
                 },
                 redirect()
                 {
-                    this.$router.push({ path: '/login' })
+                    this.$router.push({ path: '/' })
                 }
             }
     }

@@ -1,6 +1,7 @@
 @import url("//unpkg.com/element-ui@2.15.1/lib/theme-chalk/index.css")
 $light-color: rgb(200, 200, 200)
 $light-color_hover: rgb(248, 248, 248)
+$blue-color: rgb(91, 178, 227)
 $dark-color: rgba(25, 25, 25, 1)
 $fonts: Helvetica, sans-serif
 
@@ -44,12 +45,10 @@ nav
     .nav__link:hover
         color: $light-color_hover
 
+.sign
+    text-decoration: none
+    color: $blue-color
+    transition: color .4s
 
-
-.grid-content
-    border-radius: 4px
-    min-height: 36px
-
-.bg-purple-dark
-    background: #99a9bf
-
+.sign:hover
+    color: #2b698c

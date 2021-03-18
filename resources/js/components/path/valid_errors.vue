@@ -12,7 +12,9 @@
 
 <script>
     export default {
-        props: ['errors'],
+        props: {
+            errors: Object
+        },
         computed: {
             valid_errors() {
                 let errors = Object.values(this.errors);
