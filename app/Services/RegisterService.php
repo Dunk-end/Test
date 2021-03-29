@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class RegisterService
 {
@@ -12,7 +13,8 @@ class RegisterService
         User::create([
             'name' => data_get($data, 'name'),
             'login' => data_get($data, 'login'),
-            'password' => Hash::make(data_get($data, 'password'))
+            'password' => Hash::make(data_get($data, 'password')),
+            'remember_token' => Str::random(64)
         ]);
 
         return true;

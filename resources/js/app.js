@@ -7,7 +7,9 @@ import App from "./components/App";
 import ElementUI from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/ru-RU';
 import Error from "./components/path/valid_errors";
+import Header from "./components/path/Header";
 
+Vue.component('Header', Header);
 Vue.component('valid_errors', Error);
 
 Vue.use(ElementUI, { locale, size: 'small' });

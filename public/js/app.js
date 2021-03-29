@@ -3522,8 +3522,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3546,20 +3544,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3606,20 +3590,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3627,7 +3597,8 @@ __webpack_require__.r(__webpack_exports__);
       form_data: {
         login: '',
         password: ''
-      }
+      },
+      token: this.token
     };
   },
   methods: {
@@ -3641,6 +3612,9 @@ __webpack_require__.r(__webpack_exports__);
           type: 'success',
           offset: 100
         });
+
+        console.log(response.data.token);
+        localStorage.setItem('token', response.data.token);
 
         _this.redirect();
       })["catch"](function (error) {
@@ -3676,20 +3650,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3794,8 +3754,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -3846,14 +3804,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes/router */ "./resources/js/routes/router.js");
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! element-ui */ "./node_modules/element-ui/lib/element-ui.common.js");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var element_ui_lib_locale_lang_ru_RU__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-ui/lib/locale/lang/ru-RU */ "./node_modules/element-ui/lib/locale/lang/ru-RU.js");
 /* harmony import */ var _components_path_valid_errors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/path/valid_errors */ "./resources/js/components/path/valid_errors.vue");
+/* harmony import */ var _components_path_Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/path/Header */ "./resources/js/components/path/Header.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -3863,20 +3822,22 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component('valid_errors', _components_path_valid_errors__WEBPACK_IMPORTED_MODULE_4__.default);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.use((element_ui__WEBPACK_IMPORTED_MODULE_2___default()), {
+
+vue__WEBPACK_IMPORTED_MODULE_6__.default.component('Header', _components_path_Header__WEBPACK_IMPORTED_MODULE_5__.default);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.component('valid_errors', _components_path_valid_errors__WEBPACK_IMPORTED_MODULE_4__.default);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.use((element_ui__WEBPACK_IMPORTED_MODULE_2___default()), {
   locale: element_ui_lib_locale_lang_ru_RU__WEBPACK_IMPORTED_MODULE_3__.default,
   size: 'small'
 });
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$loading = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().Loading.service);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$msgbox = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$alert = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox.alert);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$confirm = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox.confirm);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$prompt = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox.prompt);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$notify = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().Notification);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.prototype.$message = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().Message);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_6__.default);
-var app = new vue__WEBPACK_IMPORTED_MODULE_5__.default({
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$loading = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().Loading.service);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$msgbox = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$alert = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox.alert);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$confirm = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox.confirm);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$prompt = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().MessageBox.prompt);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$notify = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().Notification);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.prototype.$message = (element_ui__WEBPACK_IMPORTED_MODULE_2___default().Message);
+vue__WEBPACK_IMPORTED_MODULE_6__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_7__.default);
+var app = new vue__WEBPACK_IMPORTED_MODULE_6__.default({
   el: '#app',
   render: function render(h) {
     return h(_components_App__WEBPACK_IMPORTED_MODULE_1__.default);
@@ -82123,54 +82084,8 @@ var render = function() {
             "linear-gradient(180deg, rgba(25, 25, 25, .6),rgba(25, 25, 25, .4)), url('public/storage/images/header_bg.jpg')"
         }
       },
-      [
-        _c("div", { staticClass: "header" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "nav",
-              { staticStyle: { "margin-left": "-30px" } },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "logo nav__link", attrs: { to: "/" } },
-                  [_c("big", [_c("b", [_vm._v("Laravel_blog")])])],
-                  1
-                ),
-                _vm._v(" "),
-                _c("ul", [
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        { staticClass: "nav__link", attrs: { to: "/" } },
-                        [_vm._v("Главная")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav__link",
-                          attrs: { to: "/register" }
-                        },
-                        [_vm._v("Войти")]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ],
-              1
-            )
-          ])
-        ])
-      ]
+      [_c("Header")],
+      1
     )
   ])
 }
@@ -82197,145 +82112,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", [
-    _c("div", { staticClass: "header", staticStyle: { position: "sticky" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "nav",
-          { staticStyle: { "margin-left": "-30px" } },
-          [
-            _c(
-              "router-link",
-              { staticClass: "logo nav__link", attrs: { to: "/" } },
-              [_c("big", [_c("b", [_vm._v("Laravel_blog")])])],
-              1
-            ),
-            _vm._v(" "),
-            _c("ul", [
+  return _c(
+    "section",
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(
+            "el-form",
+            {
+              staticStyle: {
+                "margin-top": "150px",
+                background: "#fff",
+                padding: "24px",
+                "border-radius": "4px",
+                "box-shadow": "0 3px 10px 0 #22222255"
+              }
+            },
+            [
+              _c("h3", { staticStyle: { "margin-bottom": "12px" } }, [
+                _vm._v("Вход")
+              ]),
+              _vm._v(" "),
+              _vm.valid_errors
+                ? _c("valid_errors", { attrs: { errors: _vm.valid_errors } })
+                : _vm._e(),
+              _vm._v(" "),
               _c(
-                "li",
+                "el-form-item",
                 [
-                  _c(
-                    "router-link",
-                    { staticClass: "nav__link", attrs: { to: "/" } },
-                    [_vm._v("Главная")]
-                  )
+                  _c("el-input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "login",
+                      placeholder: "Ваш логин, например: user"
+                    },
+                    model: {
+                      value: _vm.form_data.login,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form_data, "login", $$v)
+                      },
+                      expression: "form_data.login"
+                    }
+                  })
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
-                "li",
+                "el-form-item",
                 [
-                  _c(
-                    "router-link",
-                    { staticClass: "nav__link", attrs: { to: "/register" } },
-                    [_vm._v("Войти")]
-                  )
+                  _c("el-input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      name: "password",
+                      placeholder: "Введите пароль"
+                    },
+                    model: {
+                      value: _vm.form_data.password,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form_data, "password", $$v)
+                      },
+                      expression: "form_data.password"
+                    }
+                  })
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  staticStyle: { outline: "none" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.send($event)
+                    }
+                  }
+                },
+                [_vm._v("Войти")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                { staticClass: "sign", attrs: { to: "/register" } },
+                [_vm._v("Нет аккаунта? - Зарегистрируйтесь!")]
               )
-            ])
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _c(
-          "el-form",
-          {
-            staticStyle: {
-              "margin-top": "150px",
-              background: "#fff",
-              padding: "24px",
-              "border-radius": "4px",
-              "box-shadow": "0 3px 10px 0 #22222255"
-            }
-          },
-          [
-            _c("h3", { staticStyle: { "margin-bottom": "12px" } }, [
-              _vm._v("Вход")
-            ]),
-            _vm._v(" "),
-            _vm.valid_errors
-              ? _c("valid_errors", { attrs: { errors: _vm.valid_errors } })
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c("el-input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "login",
-                    placeholder: "Ваш логин, например: user"
-                  },
-                  model: {
-                    value: _vm.form_data.login,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form_data, "login", $$v)
-                    },
-                    expression: "form_data.login"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c("el-input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "password",
-                    name: "password",
-                    placeholder: "Введите пароль"
-                  },
-                  model: {
-                    value: _vm.form_data.password,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form_data, "password", $$v)
-                    },
-                    expression: "form_data.password"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-button",
-              {
-                staticStyle: { outline: "none" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.send($event)
-                  }
-                }
-              },
-              [_vm._v("Войти")]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "sign", attrs: { to: "/register" } },
-              [_vm._v("Нет аккаунта? - Зарегистрируйтесь!")]
-            )
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v("s\n")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -82360,189 +82238,151 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", [
-    _c("div", { staticClass: "header", staticStyle: { position: "sticky" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "nav",
-          { staticStyle: { "margin-left": "-30px" } },
-          [
-            _c(
-              "router-link",
-              { staticClass: "logo nav__link", attrs: { to: "/" } },
-              [_c("big", [_c("b", [_vm._v("Laravel_blog")])])],
-              1
-            ),
-            _vm._v(" "),
-            _c("ul", [
+  return _c(
+    "section",
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(
+            "el-form",
+            {
+              staticStyle: {
+                "margin-top": "150px",
+                background: "#fff",
+                padding: "24px",
+                "border-radius": "4px",
+                "box-shadow": "0 3px 10px 0 #22222255"
+              }
+            },
+            [
+              _c("h3", { staticStyle: { "margin-bottom": "12px" } }, [
+                _vm._v("Регистрация")
+              ]),
+              _vm._v(" "),
+              _vm.valid_errors
+                ? _c("valid_errors", { attrs: { errors: _vm.valid_errors } })
+                : _vm._e(),
+              _vm._v(" "),
               _c(
-                "li",
+                "el-form-item",
                 [
-                  _c(
-                    "router-link",
-                    { staticClass: "nav__link", attrs: { to: "/" } },
-                    [_vm._v("Главная")]
-                  )
+                  _c("el-input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "name",
+                      placeholder: "Ваше имя, например: Иван"
+                    },
+                    model: {
+                      value: _vm.form_data.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form_data, "name", $$v)
+                      },
+                      expression: "form_data.name"
+                    }
+                  })
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
-                "li",
+                "el-form-item",
                 [
-                  _c(
-                    "router-link",
-                    { staticClass: "nav__link", attrs: { to: "/register" } },
-                    [_vm._v("Войти")]
-                  )
+                  _c("el-input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "login",
+                      placeholder: "Ваш логин, например: user"
+                    },
+                    model: {
+                      value: _vm.form_data.login,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form_data, "login", $$v)
+                      },
+                      expression: "form_data.login"
+                    }
+                  })
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                [
+                  _c("el-input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      name: "password",
+                      placeholder: "Введите пароль"
+                    },
+                    model: {
+                      value: _vm.form_data.password,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form_data, "password", $$v)
+                      },
+                      expression: "form_data.password"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                [
+                  _c("el-input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      name: "password_confirm",
+                      placeholder: "Повторите пароль"
+                    },
+                    model: {
+                      value: _vm.form_data.password_confirm,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form_data, "password_confirm", $$v)
+                      },
+                      expression: "form_data.password_confirm"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  staticStyle: { outline: "none" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.send($event)
+                    }
+                  }
+                },
+                [_vm._v("Зарегистрироваться")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                { staticClass: "sign", attrs: { to: "/login" } },
+                [_vm._v("Есть аккаунта? - Авторизируйтесь!")]
               )
-            ])
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _c(
-          "el-form",
-          {
-            staticStyle: {
-              "margin-top": "150px",
-              background: "#fff",
-              padding: "24px",
-              "border-radius": "4px",
-              "box-shadow": "0 3px 10px 0 #22222255"
-            }
-          },
-          [
-            _c("h3", { staticStyle: { "margin-bottom": "12px" } }, [
-              _vm._v("Регистрация")
-            ]),
-            _vm._v(" "),
-            _vm.valid_errors
-              ? _c("valid_errors", { attrs: { errors: _vm.valid_errors } })
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c("el-input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "name",
-                    placeholder: "Ваше имя, например: Иван"
-                  },
-                  model: {
-                    value: _vm.form_data.name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form_data, "name", $$v)
-                    },
-                    expression: "form_data.name"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c("el-input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "login",
-                    placeholder: "Ваш логин, например: user"
-                  },
-                  model: {
-                    value: _vm.form_data.login,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form_data, "login", $$v)
-                    },
-                    expression: "form_data.login"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c("el-input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "password",
-                    name: "password",
-                    placeholder: "Введите пароль"
-                  },
-                  model: {
-                    value: _vm.form_data.password,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form_data, "password", $$v)
-                    },
-                    expression: "form_data.password"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c("el-input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "password",
-                    name: "password_confirm",
-                    placeholder: "Повторите пароль"
-                  },
-                  model: {
-                    value: _vm.form_data.password_confirm,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form_data, "password_confirm", $$v)
-                    },
-                    expression: "form_data.password_confirm"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-button",
-              {
-                staticStyle: { outline: "none" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.send($event)
-                  }
-                }
-              },
-              [_vm._v("Зарегистрироваться")]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "sign", attrs: { to: "/login" } },
-              [_vm._v("Есть аккаунта? - Авторизируйтесь!")]
-            )
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -82600,62 +82440,49 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _c(
-      "header",
-      {
-        staticStyle: {
-          background:
-            "linear-gradient(180deg, rgba(25, 25, 25, .6),rgba(25, 25, 25, .4)), url('../../../../public/storage/images/header_bg.jpg')"
-        }
-      },
-      [
-        _c("div", { staticClass: "header" }, [
-          _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "header", staticStyle: { position: "sticky" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "nav",
+          { staticStyle: { "margin-left": "-30px" } },
+          [
             _c(
-              "nav",
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "logo nav__link", attrs: { to: "/" } },
-                  [_c("big", [_c("b", [_vm._v("Laravel_blog")])])],
-                  1
-                ),
-                _vm._v(" "),
-                _c("ul", [
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        { staticClass: "nav__link", attrs: { to: "/" } },
-                        [_vm._v("Главная")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav__link",
-                          attrs: { to: "/register" }
-                        },
-                        [_vm._v("Войти")]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ],
+              "router-link",
+              { staticClass: "logo nav__link", attrs: { to: "/" } },
+              [_c("big", [_c("b", [_vm._v("Laravel_blog")])])],
               1
-            )
-          ])
-        ])
-      ]
-    )
+            ),
+            _vm._v(" "),
+            _c("ul", [
+              _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    { staticClass: "nav__link", attrs: { to: "/" } },
+                    [_vm._v("Главная")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    { staticClass: "nav__link", attrs: { to: "/login" } },
+                    [_vm._v("Войти")]
+                  )
+                ],
+                1
+              )
+            ])
+          ],
+          1
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
